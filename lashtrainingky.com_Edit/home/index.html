@@ -1,0 +1,1091 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tailwind CSS Template</title>
+    <!-- Include the Tailwind CSS CDN -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@latest/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"
+    />
+    text scroll
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="bg-gray-900">
+    <!-- Text Scroll -->
+    <section class="text-white text-center m-0 p-2">
+      <h1 class="top-header text font-bold">
+        To become a part of the next class, please fill out the registration
+        form 2 weeks prior to the next scheduled training.
+      </h1>
+    </section>
+
+    <header
+      class="desktop text-white text-center m-0 mt-4 p-0 pb-5 hidden md:block bottomline"
+    >
+      <!-- svg image from src(assets) -->
+      <div
+        class="container mx-auto flex flex-wrap flex-col md:flex-row items-center justify-center"
+      >
+        <a
+          class="flex title-font font-medium items-center text-white mb-4 md:mb-0"
+        >
+          <img src="../assets/logo.svg" alt="logo" class="w-30 h-20" />
+        </a>
+      </div>
+      <!-- Title 1st -->
+      <div
+        class="container mx-auto flex flex-wrap flex-col md:flex-row items-center justify-center"
+      >
+        <h1 class="title font-bold">Lash Certification Training</h1>
+      </div>
+      <!-- Title 2nd -->
+      <div
+        class="container mx-auto flex flex-wrap flex-col md:flex-row items-center justify-center"
+      >
+        <h1 class="slogan font-bold">Board Certified Trainer</h1>
+      </div>
+      <!-- Menu bar -->
+      <div
+        class="container mx-auto flex flex-wrap flex-col md:flex-row items-center justify-center"
+      >
+        <nav
+          class="md:block flex flex-wrap items-center text-base justify-center pt-5"
+        >
+          <a class="mr-5 hover:gray-300">Welcome</a>
+          <a class="mr-5 hover:gray-300">Services & Registration Form</a>
+          <a class="mr-5 hover:text-white">Events</a>
+          <a class="mr-5 hover:text-white">Contacts</a>
+          <a class="mr-5 hover:text-white">Program For Under 18 Years Of Age</a>
+          <a class="mr-5 hover:text-white">KY State Board Permit Information</a>
+          <a class="mr-5 hover:text-white">FAQs</a>
+        </nav>
+      </div>
+    </header>
+    <!-- Mene bar When Mobile view -->
+    <header class="mobile bg-gray-800 block md:hidden">
+      <div
+        class="container mx-auto px-4 py-6 md:flex md:justify-between md:items-center bottomline"
+      >
+        <div class="flex items-center justify-between">
+          <button
+            id="menu-toggle"
+            class="block md:hidden text-gray-500 hover:text-white focus:text-white focus:outline-none absolute"
+          >
+            <svg class="h-6 w-6 fill-current" viewBox="0 0 24 24">
+              <path
+                v-if="open"
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M19 6H5v2h14V6zm0 5H5v2h14v-2zm0 5H5v2h14v-2z"
+              />
+              <path
+                v-else
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M4 6h16v2H4V6zm0 5h16v2H4v-2zm0 5h16v2H4v-2z"
+              />
+            </svg>
+          </button>
+
+          <div class="container">
+            <div
+              class="container mx-auto flex flex-wrap flex-col md:flex-row items-center justify-center"
+            >
+              <a
+                class="flex title-font font-medium items-center text-white md:mb-0"
+              >
+                <img src="../assets/logo.svg" alt="logo" class="w-20 h-20" />
+              </a>
+            </div>
+            <div
+              class="container mx-auto flex flex-wrap flex-col md:flex-row items-center justify-center"
+            >
+              <h1 class="title font-bold">Lash Certification Training</h1>
+            </div>
+            <div
+              class="container mx-auto flex flex-wrap flex-col md:flex-row items-center justify-center"
+            >
+              <h1 class="slogan font-bold">Board Certified Trainer</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+      <nav id="nav-links" class="hidden md:flex md:items-center pl-5 pb-5">
+        <a
+          class="block mt-4 md:inline-block md:mt-0 text-gray-300 hover:text-white mr-4"
+          href="#"
+          >Welcome</a
+        >
+        <a
+          class="block mt-4 md:inline-block md:mt-0 text-gray-300 hover:text-white mr-4"
+          href="#"
+          >Services & Registration Form</a
+        >
+        <a
+          class="block mt-4 md:inline-block md:mt-0 text-gray-300 hover:text-white mr-4"
+          href="#"
+          >Events</a
+        >
+        <a
+          class="block mt-4 md:inline-block md:mt-0 text-gray-300 hover:text-white mr-4"
+          href="#"
+          >Contacts</a
+        >
+        <a
+          class="block mt-4 md:inline-block md:mt-0 text-gray-300 hover:text-white mr-4"
+          href="#"
+          >Program For Under 18 Years Of Age</a
+        >
+        <a
+          class="block mt-4 md:inline-block md:mt-0 text-gray-300 hover:text-white mr-4"
+          href="#"
+          >KY State Board Permit Information</a
+        >
+        <a
+          class="block mt-4 md:inline-block md:mt-0 text-gray-300 hover:text-white"
+          href="#"
+          >FAQs</a
+        >
+      </nav>
+    </header>
+    <!-- Mobile view script -->
+    <script>
+      const menuToggle = document.getElementById("menu-toggle");
+      const navLinks = document.getElementById("nav-links");
+
+      menuToggle.addEventListener("click", () => {
+        navLinks.classList.toggle("hidden");
+      });
+    </script>
+    <section>
+      <div class="-mt-30 relative w-full py-12 px-12 bg-yellow-900">
+        <div class="relative z-10 text-center py-24 md:py-48">
+          <h1
+            class="text-black text-right text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-display mb-12"
+          >
+            <span
+              style="text-decoration: none solid rgb(0, 0, 0)"
+              class="wixui-rich-text__text"
+              >LEARN TO APPLY</span
+            >
+            <div>
+              <span
+                style="font-weight: bold"
+                class="wixui-rich-text__text font-bold"
+                >LASH EXTENSIONS</span
+              >
+            </div>
+
+            <div>
+              <span
+                style="text-decoration: none solid rgb(0, 0, 0)"
+                class="wixui-rich-text__text"
+                >IN A DASH</span
+              >
+            </div>
+          </h1>
+          <a
+            href="index.html"
+            class="inline-block border-4 border-zinc-950 hover:bg-[#FFD1E8] hover:border-white text-black uppercase font-bold text-lg tracking-widest font-heading px-8 py-4"
+            >LEARN MORE</a
+          >
+        </div>
+        <img
+          src="https://static.wixstatic.com/media/90a441_b6306a24d71d43de8101e19027b0cf9a~mv2.jpg/v1/fill/w_1100,h_520,al_c,q_85,enc_auto/90a441_b6306a24d71d43de8101e19027b0cf9a~mv2.jpg"
+          class="w-full h-full absolute inset-0 object-cover"
+        />
+      </div>
+    </section>
+
+    <section class="bg-white">
+      <div class="max-w-4xl mx-auto text-center py-12 md:py-24 px-1">
+        <div class="w-24 h-2 bg-yellow-800 mb-4 mx-auto"></div>
+        <h2 class="font-display text-3xl md:text-4xl mb-6">
+          ENHANCE YOUR SKILLS WITH
+        </h2>
+        <h2 class="font-display font-bold text-3xl md:text-4xl mb-6">
+          EYELASH EXTENSION TRAINING
+        </h2>
+        <p class="font-light text-gray-600 mb-6 leading-relaxed px-8">
+          Become a certified eyelash extension technician with help from Soraia
+          in Louisville, Kentucky. Our team would like to offer you the
+          opportunity to hone your skills through our training classes. Lash
+          extensions have the fastest-growing potential market in the beauty
+          industry, and applying them is a fantastic skill to learn if you are
+          aiming for professional growth in the future.
+        </p>
+        <p class="font-light text-gray-600 mb-6 leading-relaxed px-8">
+          You will also get to work with different clients since many baby
+          boomers love getting eyelash extensions and younger women often get
+          them for special events. This is an ongoing service that requires a
+          refill on the lashes every 2 to 3 weeks. While the initial set will
+          stay for up to 2 months, lashes still shed and new ones are needed to
+          replace them..
+        </p>
+        <p class="font-light text-gray-600 mb-6 leading-relaxed px-8">
+          With our help, you will learn how to correctly apply the first set and
+          the lash refills as well to keep the look seamless and put together.
+          Moreover, you will be taught how to make it a relaxing experience for
+          the client. Whether you are someone seeking a new set of technical
+          skills or a salon professional in need of more education to be able to
+          add new services to your menu, look no further than Soraia & friends
+          Inc!
+        </p>
+        <a
+          href="index.html"
+          class="inline-block border-4 border-zinc-950 bg-[#FFD1E8] hover:bg-inherit hover:border-[#FFD1E8] text-black uppercase font-bold text-lg tracking-widest font-heading px-8 py-4"
+          >Read More</a
+        >
+      </div>
+    </section>
+    <section>
+      <div
+        class="bg-white dark:bg-gray-800 h-screen h-full py-6 sm:py-8 lg:py-12"
+      >
+        <div class="mx-auto max-w-screen-3xl px-4 md:px-8">
+          <div
+            class="mb-4 flex items-center justify-between gap-8 sm:mb-8 md:mb-12"
+          ></div>
+
+          <div class="grid grid-cols-2 gap-4 sm:grid-cols-3 md:gap-6 xl:gap-8">
+            <!-- image - start -->
+            <a
+              href="#"
+              class="group relative flex h-48 items-end overflow-hidden rounded-lg bg-gray-100 shadow-lg md:h-80"
+            >
+              <img
+                src="https://static.wixstatic.com/media/897f6b_26707b26ab7b4a36ab80f0f7f6a16f4e~mv2.png/v1/fill/w_259,h_255,q_90/897f6b_26707b26ab7b4a36ab80f0f7f6a16f4e~mv2.webp"
+                loading="Lash"
+                alt="Photo by Lash Certification Training"
+                class="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110"
+              />
+
+              <div
+                class="pointer-events-none absolute inset-0 bg-gradient-to-t from-gray-800 via-transparent to-transparent opacity-50"
+              ></div>
+
+              <span
+                class="relative ml-4 mb-3 inline-block text-sm text-white md:ml-5 md:text-lg"
+              ></span>
+            </a>
+            <!-- image - end -->
+
+            <!-- image - start -->
+            <a
+              href="#"
+              class="group relative flex h-48 items-end overflow-hidden rounded-lg bg-gray-100 shadow-lg md:col-span-2 md:h-80"
+            >
+              <img
+                src="https://static.wixstatic.com/media/897f6b_2ecc59baba6d410db0ab062ff3891a57~mv2.jpg/v1/fill/w_438,h_255,q_90/897f6b_2ecc59baba6d410db0ab062ff3891a57~mv2.webp"
+                loading="Lash"
+                alt="Photo by Lash Certification Training"
+                class="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110"
+              />
+
+              <div
+                class="pointer-events-none absolute inset-0 bg-gradient-to-t from-gray-800 via-transparent to-transparent opacity-50"
+              ></div>
+
+              <span
+                class="relative ml-4 mb-3 inline-block text-sm text-white md:ml-5 md:text-lg"
+              ></span>
+            </a>
+            <!-- image - end -->
+
+            <!-- image - start -->
+            <a
+              href="#"
+              class="group relative flex h-48 items-end overflow-hidden rounded-lg bg-gray-100 shadow-lg md:col-span-2 md:h-80"
+            >
+              <img
+                src="https://static.wixstatic.com/media/897f6b_7dd109960002450bab49523d310caaa3~mv2.jpg/v1/fill/w_766,h_209,q_90/897f6b_7dd109960002450bab49523d310caaa3~mv2.webp"
+                loading="Lash"
+                alt="Photo by Lash Certification Training"
+                class="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110"
+              />
+
+              <div
+                class="pointer-events-none absolute inset-0 bg-gradient-to-t from-gray-800 via-transparent to-transparent opacity-50"
+              ></div>
+
+              <span
+                class="relative ml-4 mb-3 inline-block text-sm text-white md:ml-5 md:text-lg"
+              ></span>
+            </a>
+            <!-- image - end -->
+
+            <!-- image - start -->
+            <a
+              href="#"
+              class="group relative flex h-48 items-end overflow-hidden rounded-lg bg-gray-100 shadow-lg md:h-80"
+            >
+              <img
+                src="https://static.wixstatic.com/media/897f6b_53569c1c0d6d453aa82ae8ef2c0225a3~mv2.jpg/v1/fill/w_209,h_209,q_90/897f6b_53569c1c0d6d453aa82ae8ef2c0225a3~mv2.webp"
+                loading="Lash"
+                alt="Photo by Lash Certification Training"
+                class="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110"
+              />
+
+              <div
+                class="pointer-events-none absolute inset-0 bg-gradient-to-t from-gray-800 via-transparent to-transparent opacity-50"
+              ></div>
+
+              <span
+                class="relative ml-4 mb-3 inline-block text-sm text-white md:ml-5 md:text-lg"
+              ></span>
+            </a>
+            <!-- image - end -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div
+        class="bg-white dark:bg-gray-80 lg:py-32"
+      >
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-[#FFD1E8]">
+      <div class="max-w-3xl mx-auto text-center py-6 md:py-12 px-1">
+        <div
+        class="container mx-auto flex flex-wrap flex-col md:flex-row items-center justify-center"
+      >
+        <a
+          class="flex title-font font-medium items-center text-white mb-4 md:mb-0"
+        >
+          <img src="../assets/logo2.svg" alt="logo" class="w-30 h-20" />
+        </a>
+      </div>
+        <h2 class="font-display font-bold text-3xl md:text-4xl mb-6">
+          Mission Statement 
+        </h2>
+        <p class="font-light text-gray-600 mb-6 leading-relaxed px-8">
+          We strive to provide comprehensive education about eyelash extension application.
+      </div>
+    </section>
+
+    <section>
+<div class="min-h-screen flex flex-col p-8 sm:p-16 md:p-24 justify-center bg-black">
+  <!-- Themes: blue, purple and teal -->
+  <div data-theme="teal" class="mx-auto max-w-6xl">
+    <h2 class="sr-only">Featured case study</h2>
+    <section class="font-sans text-black">
+      <div class="[ lg:flex lg:items-center ] [ fancy-corners fancy-corners--large fancy-corners--top-left fancy-corners--bottom-right ]">
+        <div class="flex-shrink-0 self-stretch sm:flex-basis-40 md:flex-basis-50 xl:flex-basis-60">
+          <div class="h-full">
+            <article class="h-full">
+              <div class="h-full">
+                <img class="h-full object-cover" src="https://static.wixstatic.com/media/90a441_9ea354f90d8b462fa2935ef12cbfdbe9~mv2.jpg/v1/fill/w_397,h_654,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/90a441_9ea354f90d8b462fa2935ef12cbfdbe9~mv2.jpg" alt='""' width="mx-auto" typeof="foaf:Image" />
+              </div>
+            </article>
+          </div>
+        </div>
+        <div class="p-6 bg-grey text-white">
+          <div class="leading-relaxed">
+            <h2 class="leading-tight text-4xl font-bold">Meet the Owner , Instructor  & 
+              Certified State Board Approved Kentucky Trainer</h2>
+            <p class="mt-4">Soraia had her start in the beauty industry when she opened a hair salon in 2001.</p>
+            <p class="mt-4">There, she offered hairstyling, eyelash extension, and permanent makeup services.</p>
+            <p class="mt-4">Of those three, she found herself becoming most fascinated with eyelash extensions and envisioned creating a lash business that offered services at affordable rates.</p>
+            <p class="mt-4">She then enrolled with few Companies however She finds out GladGirl & Lash Training Academy  are the best and she stay with them for many years and  she is Ky State Board Certified Trainer </p>
+            <p class="mt-4">Unlike many of her competitors, Soraia works swiftly and efficiently, and she generously walks her students through the whole process. Many of her clients can also attest to the level of skill and professionalism that she exhibits in her services.</p>
+            <p class="mt-4">As the "expert in eyelashes," Soraia customizes each client’s experience 
+based on their needs and desires. From natural to dramatic lashes, she works so that each person can experience how eyelash extensions can make a difference in their lives.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+    </section>
+
+    <!-- Asked Question -->
+    <section class="">
+      <ul class="max-w-2xl mx-auto mt-20 divide-y  shadow shadow-red-300 rounded-xl text-white">
+        <div class="text-center mb-16">
+          <p class="mt-4 text-sm leading-7 text-gray-500 font-regular">
+              F.A.Q
+          </p>
+          <h3 class="text-3xl sm:text-4xl leading-normal font-extrabold tracking-tight">
+              Frequently Asked Questions</span>
+          </h3>
+      </div>
+        <li>
+            <details class="group">
+                <summary class="hover:bg-[#FFD1E8] hover:text-black flex items-center gap-3 px-4 py-3 font-medium marker:content-none hover:cursor-pointer">
+                    <svg class="w-5 h-5 text-gray-500 transition group-open:rotate-90" xmlns="http://www.w3.org/2000/svg"
+                        width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z">
+                        </path>
+                    </svg>
+                    <span >Do I need insurance?</span>
+                </summary>
+    
+                <article class="px-4 pb-4">
+                    <p>
+                      Yes You Do 
+                      To get your insurance. Click on Service page scroll down till you Get to Important Reminders, Click on Hyperlink.
+                    </p>
+                </article>
+            </details>
+        </li>
+        <li>
+            <details class="group">
+                <summary class="hover:bg-[#FFD1E8] hover:text-black flex items-center gap-3 px-4 py-3 font-medium marker:content-none hover:cursor-pointer">
+                    <svg class="w-5 h-5 text-gray-500 transition group-open:rotate-90" xmlns="http://www.w3.org/2000/svg"
+                        width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z">
+                        </path>
+                    </svg>
+                    <span>What should I do to prepare for training?</span>
+                </summary>
+    
+                <article class="px-4 pb-4">
+                    <p>
+                      Dress comfortably sitting for long period of time is a major part of eyelash extensions. Nails should be short for class this is strongly suggested but not required?</p>
+                </article>
+            </details>
+        </li>
+        <li>
+            <details class="group">
+                <summary class="hover:bg-[#FFD1E8] hover:text-black flex items-center gap-3 px-4 py-3 font-medium marker:content-none hover:cursor-pointer">
+                    <svg class="w-5 h-5 text-gray-500 transition group-open:rotate-90" xmlns="http://www.w3.org/2000/svg"
+                        width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z">
+                        </path>
+                    </svg>
+                    <span>Will the deposit go towards class amount ?</span>
+                </summary>
+    
+                <article class="px-4 pb-4">
+                    <p>
+                      The deposit paid to register for training will go toward total balance of class which will need to be paid in full at the start of the class on training day. </p>
+                </article>
+            </details>
+        </li>
+        <li>
+            <details class="group">
+                <summary class="hover:bg-[#FFD1E8] hover:text-black flex items-center gap-3 px-4 py-3 font-medium marker:content-none hover:cursor-pointer">
+                    <svg class="w-5 h-5 text-gray-500 transition group-open:rotate-90" xmlns="http://www.w3.org/2000/svg"
+                        width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z">
+                        </path>
+                    </svg>
+                    <span>What if I need to cancel the training?</span>
+                </summary>
+    
+                <article class="px-4 pb-4">
+                    <p>
+                      Deposits are nonrefundable however if you would like to reschedule you have 14 days from course cancellation to re-enroll for a different date and you can reschedule one time only or you forfeit the original deposit. </p>
+                </article>
+            </details>
+        </li>
+        <li>
+            <details class="group">
+                <summary class="hover:bg-[#FFD1E8] hover:text-black flex items-center gap-3 px-4 py-3 font-medium marker:content-none hover:cursor-pointer">
+                    <svg class="w-5 h-5 text-gray-500 transition group-open:rotate-90" xmlns="http://www.w3.org/2000/svg"
+                        width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z">
+                        </path>
+                    </svg>
+                    <span>Will I need additional sanitation training for an Eyelash Extension, Makeup Artistry or Threading Permit?</span>
+                </summary>
+    
+                <article class="px-4 pb-4">
+                    <p>
+                      Yes, all permits require a minimum of a 3 hours infection control course. This course is available online at:​ https://www.miladypro.com/store/products/detail/ 9781285860862​/infection-control-online-class​ Completion of the infection control course must be submitted to the board office with the completed permit application and a copy of a current government photo ID and passport photo. The Board will not accept an Infection control course that has been taken over one year. </p>
+                </article>
+            </details>
+        </li>
+        <li>
+            <details class="group">
+                <summary class="hover:bg-[#FFD1E8] hover:text-black flex items-center gap-3 px-4 py-3 font-medium marker:content-none hover:cursor-pointer">
+                    <svg class="w-5 h-5 text-gray-500 transition group-open:rotate-90" xmlns="http://www.w3.org/2000/svg"
+                        width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z">
+                        </path>
+                    </svg>
+                    <span>Can I skip the classic training and jump straight to the volume training?</span>
+                </summary>
+    
+                <article class="px-4 pb-4">
+                    <p>
+                      Not unless you can provide proof from another training course with photos because our classic lash class covers the basics needed to complete a volume set.</p>
+                </article>
+            </details>
+        </li>
+        <li>
+            <details class="group">
+                <summary class="hover:bg-[#FFD1E8] hover:text-black flex items-center gap-3 px-4 py-3 font-medium marker:content-none hover:cursor-pointer">
+                    <svg class="w-5 h-5 text-gray-500 transition group-open:rotate-90" xmlns="http://www.w3.org/2000/svg"
+                        width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z">
+                        </path>
+                    </svg>
+                    <span>Will I be able to legally charge clients for eyelash extensions services after being certified through this course?</span>
+                </summary>
+    
+                <article class="px-4 pb-4">
+                    <p>
+                      Yes! We are certified through the stateboard so you will be covered under a specialty permit to over eyelash extension services. </p>
+                </article>
+            </details>
+        </li>
+        <li>
+            <details class="group">
+                <summary class="hover:bg-[#FFD1E8] hover:text-black flex items-center gap-3 px-4 py-3 font-medium marker:content-none hover:cursor-pointer">
+                    <svg class="w-5 h-5 text-gray-500 transition group-open:rotate-90" xmlns="http://www.w3.org/2000/svg"
+                        width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z">
+                        </path>
+                    </svg>
+                    <span>Where can I provide services as an Eyelash Extension, Makeup Artistry or Threading Permit holder?</span>
+                </summary>
+    
+                <article class="px-4 pb-4">
+                    <p>
+                      All licenses or Permit holders in the state of Kentucky a​re required by law to work in a licensed facility approved through the KBC office at all times.</p>
+                </article>
+            </details>
+        </li>
+        <li>
+            <details class="group">
+                <summary class="hover:bg-[#FFD1E8] hover:text-black flex items-center gap-3 px-4 py-3 font-medium marker:content-none hover:cursor-pointer">
+                    <svg class="w-5 h-5 text-gray-500 transition group-open:rotate-90" xmlns="http://www.w3.org/2000/svg"
+                        width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z">
+                        </path>
+                    </svg>
+                    <span>Will I receive a partial refund if I leave the class early?</span>
+                </summary>
+    
+                <article class="px-4 pb-4">
+                    <p>
+                      No we wouldn't be able to give any refunds for early dismissal from the training course and you are not going to be certified if you leave early. </p>
+                </article>
+            </details>
+        </li>
+        <li>
+            <details class="group">
+                <summary class="hover:bg-[#FFD1E8] hover:text-black flex items-center gap-3 px-4 py-3 font-medium marker:content-none hover:cursor-pointer">
+                    <svg class="w-5 h-5 text-gray-500 transition group-open:rotate-90" xmlns="http://www.w3.org/2000/svg"
+                        width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z">
+                        </path>
+                    </svg>
+                    <span>I see the description says hands-on training on a live model, will you provide the model?</span>
+                </summary>
+    
+                <article class="px-4 pb-4">
+                    <p>
+                      No, It is your responsibility to bring a model.</p>
+                </article>
+            </details>
+        </li>
+        <li>
+            <details class="group">
+                <summary class="hover:bg-[#FFD1E8] hover:text-black flex items-center gap-3 px-4 py-3 font-medium marker:content-none hover:cursor-pointer">
+                    <svg class="w-5 h-5 text-gray-500 transition group-open:rotate-90" xmlns="http://www.w3.org/2000/svg"
+                        width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z">
+                        </path>
+                    </svg>
+                    <span>Will you provide a vendor list in training?</span>
+                </summary>
+    
+                <article class="px-4 pb-4">
+                    <p>
+                      A vendors list will be made available to you through your student portal after the class is completed.  </p>
+                </article>
+            </details>
+        </li>
+        <li>
+            <details class="group">
+                <summary class="hover:bg-[#FFD1E8] hover:text-black flex items-center gap-3 px-4 py-3 font-medium marker:content-none hover:cursor-pointer">
+                    <svg class="w-5 h-5 text-gray-500 transition group-open:rotate-90" xmlns="http://www.w3.org/2000/svg"
+                        width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z">
+                        </path>
+                    </svg>
+                    <span>With this certificate can I train other people in eyelash extensions?</span>
+                </summary>
+    
+                <article class="px-4 pb-4">
+                    <p>
+                      According to Kentucky law from state board you would need to be a licensed professional as well as a licensed instructor or in instructor school to offer training.</p>
+                </article>
+            </details>
+        </li>
+        <li>
+            <details class="group">
+                <summary class="hover:bg-[#FFD1E8] hover:text-black flex items-center gap-3 px-4 py-3 font-medium marker:content-none hover:cursor-pointer">
+                    <svg class="w-5 h-5 text-gray-500 transition group-open:rotate-90" xmlns="http://www.w3.org/2000/svg"
+                        width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z">
+                        </path>
+                    </svg>
+                    <span>Can this certificate be used in another state? </span>
+                </summary>
+    
+                <article class="px-4 pb-4">
+                    <p>
+                      Each state has its own regulations I would advise you to refer to each individual states regulations on eyelash extensions.</p>
+                </article>
+            </details>
+        </li>
+        <li>
+            <details class="group">
+                <summary class="hover:bg-[#FFD1E8] hover:text-black flex items-center gap-3 px-4 py-3 font-medium marker:content-none hover:cursor-pointer">
+                    <svg class="w-5 h-5 text-gray-500 transition group-open:rotate-90" xmlns="http://www.w3.org/2000/svg"
+                        width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z">
+                        </path>
+                    </svg>
+                    <span>How do I apply for Permit?</span>
+                </summary>
+    
+                <article class="px-4 pb-4">
+                    <p>
+                      Please Visit Ky State Board Website for Information about your Permit 
+                      https://kbc.ky.gov/licensure/specialty%20per​mits/pages/default.aspx </p>
+                </article>
+            </details>
+        </li>
+    
+    </ul>
+    <div class="max-w-4xl mx-auto text-center py-6 md:py-6 px-1">
+      <a
+        href="index.html"
+        class="inline-block border-4 border-zinc-950 bg-[#FFD1E8] hover:text-white hover:bg-inherit hover:border-[#FFD1E8] text-black uppercase font-bold text-lg tracking-widest font-heading px-4 py-4"
+        >Read More</a
+      >
+    </div>
+    </section>
+
+    <section class="text-gray-400 body-font">
+      <div class="container px-5 py-24 mx-auto">
+        <div
+          class="flex flex-wrap w-full mb-20 flex-col items-center text-center"
+        >
+          <h1
+            class="sm:text-3xl text-2xl font-medium title-font mb-2 text-white"
+          >
+            Pitchfork Kickstarter Taxidermy
+          </h1>
+          <p class="lg:w-1/2 w-full leading-relaxed text-opacity-80">
+            Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical
+            gentrify, subway tile poke farm-to-table.
+          </p>
+        </div>
+        <div class="flex flex-wrap -m-4">
+          <div class="xl:w-1/3 md:w-1/2 p-4">
+            <div
+              class="border border-gray-700 border-opacity-75 p-6 rounded-lg"
+            >
+              <div
+                class="w-10 h-10 inline-flex items-center justify-center rounded-full bg-gray-800 text-indigo-400 mb-4"
+              >
+                <svg
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  class="w-6 h-6"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+                </svg>
+              </div>
+              <h2 class="text-lg text-white font-medium title-font mb-2">
+                Shooting Stars
+              </h2>
+              <p class="leading-relaxed text-base">
+                Fingerstache flexitarian street art 8-bit waist co, subway tile
+                poke farm.
+              </p>
+            </div>
+          </div>
+          <div class="xl:w-1/3 md:w-1/2 p-4">
+            <div
+              class="border border-gray-700 border-opacity-75 p-6 rounded-lg"
+            >
+              <div
+                class="w-10 h-10 inline-flex items-center justify-center rounded-full bg-gray-800 text-indigo-400 mb-4"
+              >
+                <svg
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  class="w-6 h-6"
+                  viewBox="0 0 24 24"
+                >
+                  <circle cx="6" cy="6" r="3"></circle>
+                  <circle cx="6" cy="18" r="3"></circle>
+                  <path
+                    d="M20 4L8.12 15.88M14.47 14.48L20 20M8.12 8.12L12 12"
+                  ></path>
+                </svg>
+              </div>
+              <h2 class="text-lg text-white font-medium title-font mb-2">
+                The Catalyzer
+              </h2>
+              <p class="leading-relaxed text-base">
+                Fingerstache flexitarian street art 8-bit waist co, subway tile
+                poke farm.
+              </p>
+            </div>
+          </div>
+          <div class="xl:w-1/3 md:w-1/2 p-4">
+            <div
+              class="border border-gray-700 border-opacity-75 p-6 rounded-lg"
+            >
+              <div
+                class="w-10 h-10 inline-flex items-center justify-center rounded-full bg-gray-800 text-indigo-400 mb-4"
+              >
+                <svg
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  class="w-6 h-6"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"></path>
+                  <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+              </div>
+              <h2 class="text-lg text-white font-medium title-font mb-2">
+                Neptune
+              </h2>
+              <p class="leading-relaxed text-base">
+                Fingerstache flexitarian street art 8-bit waist co, subway tile
+                poke farm.
+              </p>
+            </div>
+          </div>
+          <div class="xl:w-1/3 md:w-1/2 p-4">
+            <div
+              class="border border-gray-700 border-opacity-75 p-6 rounded-lg"
+            >
+              <div
+                class="w-10 h-10 inline-flex items-center justify-center rounded-full bg-gray-800 text-indigo-400 mb-4"
+              >
+                <svg
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  class="w-6 h-6"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1zM4 22v-7"
+                  ></path>
+                </svg>
+              </div>
+              <h2 class="text-lg text-white font-medium title-font mb-2">
+                Melanchole
+              </h2>
+              <p class="leading-relaxed text-base">
+                Fingerstache flexitarian street art 8-bit waist co, subway tile
+                poke farm.
+              </p>
+            </div>
+          </div>
+          <div class="xl:w-1/3 md:w-1/2 p-4">
+            <div
+              class="border border-gray-700 border-opacity-75 p-6 rounded-lg"
+            >
+              <div
+                class="w-10 h-10 inline-flex items-center justify-center rounded-full bg-gray-800 text-indigo-400 mb-4"
+              >
+                <svg
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  class="w-6 h-6"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                </svg>
+              </div>
+              <h2 class="text-lg text-white font-medium title-font mb-2">
+                Bunker
+              </h2>
+              <p class="leading-relaxed text-base">
+                Fingerstache flexitarian street art 8-bit waist co, subway tile
+                poke farm.
+              </p>
+            </div>
+          </div>
+          <div class="xl:w-1/3 md:w-1/2 p-4">
+            <div
+              class="border border-gray-700 border-opacity-75 p-6 rounded-lg"
+            >
+              <div
+                class="w-10 h-10 inline-flex items-center justify-center rounded-full bg-gray-800 text-indigo-400 mb-4"
+              >
+                <svg
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  class="w-6 h-6"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                </svg>
+              </div>
+              <h2 class="text-lg text-white font-medium title-font mb-2">
+                Ramona Falls
+              </h2>
+              <p class="leading-relaxed text-base">
+                Fingerstache flexitarian street art 8-bit waist co, subway tile
+                poke farm.
+              </p>
+            </div>
+          </div>
+        </div>
+        <button
+          class="flex mx-auto mt-16 text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg"
+        >
+          Button
+        </button>
+      </div>
+    </section>
+
+    <footer class="text-gray-400 bg-gray-900 body-font">
+      <div
+        class="container px-5 py-24 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col"
+      >
+        <div
+          class="w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left"
+        >
+          <a
+            class="flex title-font font-medium items-center md:justify-start justify-center text-white"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              class="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"
+              ></path>
+            </svg>
+            <span class="ml-3 text-xl">Tailblocks</span>
+          </a>
+          <p class="mt-2 text-sm text-gray-500">
+            Air plant banjo lyft occupy retro adaptogen indego
+          </p>
+        </div>
+        <div
+          class="flex-grow flex flex-wrap md:pl-20 -mb-10 md:mt-0 mt-10 md:text-left text-center"
+        >
+          <div class="lg:w-1/4 md:w-1/2 w-full px-4">
+            <h2
+              class="title-font font-medium text-white tracking-widest text-sm mb-3"
+            >
+              CATEGORIES
+            </h2>
+            <nav class="list-none mb-10">
+              <li>
+                <a class="text-gray-400 hover:text-white">First Link</a>
+              </li>
+              <li>
+                <a class="text-gray-400 hover:text-white">Second Link</a>
+              </li>
+              <li>
+                <a class="text-gray-400 hover:text-white">Third Link</a>
+              </li>
+              <li>
+                <a class="text-gray-400 hover:text-white">Fourth Link</a>
+              </li>
+            </nav>
+          </div>
+          <div class="lg:w-1/4 md:w-1/2 w-full px-4">
+            <h2
+              class="title-font font-medium text-white tracking-widest text-sm mb-3"
+            >
+              CATEGORIES
+            </h2>
+            <nav class="list-none mb-10">
+              <li>
+                <a class="text-gray-400 hover:text-white">First Link</a>
+              </li>
+              <li>
+                <a class="text-gray-400 hover:text-white">Second Link</a>
+              </li>
+              <li>
+                <a class="text-gray-400 hover:text-white">Third Link</a>
+              </li>
+              <li>
+                <a class="text-gray-400 hover:text-white">Fourth Link</a>
+              </li>
+            </nav>
+          </div>
+          <div class="lg:w-1/4 md:w-1/2 w-full px-4">
+            <h2
+              class="title-font font-medium text-white tracking-widest text-sm mb-3"
+            >
+              CATEGORIES
+            </h2>
+            <nav class="list-none mb-10">
+              <li>
+                <a class="text-gray-400 hover:text-white">First Link</a>
+              </li>
+              <li>
+                <a class="text-gray-400 hover:text-white">Second Link</a>
+              </li>
+              <li>
+                <a class="text-gray-400 hover:text-white">Third Link</a>
+              </li>
+              <li>
+                <a class="text-gray-400 hover:text-white">Fourth Link</a>
+              </li>
+            </nav>
+          </div>
+          <div class="lg:w-1/4 md:w-1/2 w-full px-4">
+            <h2
+              class="title-font font-medium text-white tracking-widest text-sm mb-3"
+            >
+              CATEGORIES
+            </h2>
+            <nav class="list-none mb-10">
+              <li>
+                <a class="text-gray-400 hover:text-white">First Link</a>
+              </li>
+              <li>
+                <a class="text-gray-400 hover:text-white">Second Link</a>
+              </li>
+              <li>
+                <a class="text-gray-400 hover:text-white">Third Link</a>
+              </li>
+              <li>
+                <a class="text-gray-400 hover:text-white">Fourth Link</a>
+              </li>
+            </nav>
+          </div>
+        </div>
+      </div>
+      <div class="bg-gray-800 bg-opacity-75">
+        <div
+          class="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row"
+        >
+          <p class="text-gray-400 text-sm text-center sm:text-left">
+            © 2020 Tailblocks —
+            <a
+              href="https://twitter.com/knyttneve"
+              rel="noopener noreferrer"
+              class="text-gray-500 ml-1"
+              target="_blank"
+              >@knyttneve</a
+            >
+          </p>
+          <span
+            class="inline-flex sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start"
+          >
+            <a class="text-gray-400">
+              <svg
+                fill="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                class="w-5 h-5"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"
+                ></path>
+              </svg>
+            </a>
+            <a class="ml-3 text-gray-400">
+              <svg
+                fill="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                class="w-5 h-5"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"
+                ></path>
+              </svg>
+            </a>
+            <a class="ml-3 text-gray-400">
+              <svg
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                class="w-5 h-5"
+                viewBox="0 0 24 24"
+              >
+                <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                <path
+                  d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"
+                ></path>
+              </svg>
+            </a>
+            <a class="ml-3 text-gray-400">
+              <svg
+                fill="currentColor"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="0"
+                class="w-5 h-5"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke="none"
+                  d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"
+                ></path>
+                <circle cx="4" cy="4" r="2" stroke="none"></circle>
+              </svg>
+            </a>
+          </span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

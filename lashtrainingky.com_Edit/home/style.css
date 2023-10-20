@@ -1,0 +1,52 @@
+/* import popppins font */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap");
+
+h1.title {
+  text-align: center;
+  color: #ffd1e8;
+  font-family: poppins;
+  font-weight: 400;
+  font-size: 40px;
+}
+
+h1.slogan {
+  text-align: center;
+  color: #ffffff;
+  font-family: poppins;
+  font-weight: 700;
+  font-size: 40px;
+}
+
+.bottomline {
+  border-bottom: 4px solid #eaa7dd;
+}
+
+@media (max-width: 640px) {
+  section {
+    overflow: hidden;
+  }
+
+  h1.top-header {
+    white-space: nowrap;
+    overflow: hidden;
+    animation: marquee 10s linear infinite;
+  }
+
+  @keyframes marquee {
+    0% {
+      transform: translateX(100%);
+    }
+
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  h1.title {
+    font-size: 20px;
+  }
+
+  h1.slogan {
+    font-size: 20px;
+  }
+}

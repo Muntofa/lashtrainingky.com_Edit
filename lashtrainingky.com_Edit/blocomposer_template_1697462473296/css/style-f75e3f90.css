@@ -1,0 +1,15 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+}
+#iy6bk {
+  animation: fadeIn 2s ease 1 normal none running;
+}
+.not-visible {
+  animation: none !important;
+}
+#i0tsnl {
+  padding: 10px;
+}
